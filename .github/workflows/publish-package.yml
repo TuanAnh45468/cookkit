@@ -1,0 +1,22 @@
+name: Publish on github
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish-gpr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com/
+          scope: '@tuananh45468'
+      - run: pnpm install
+      - run: pnpm run test
+      - run: pnpm run build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
