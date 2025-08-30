@@ -1,6 +1,6 @@
 import { FC } from "react";
-import {ButtonProps} from "../button";
-import {Button} from "../index";
+import { ButtonProps } from "../button";
+import { Button } from "../index";
 
 const Example: FC<ButtonProps> = ({
   disabled = false,
