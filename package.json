@@ -17,7 +17,7 @@
     "test:ui": "vitest --ui",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "pnpm run build"
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
